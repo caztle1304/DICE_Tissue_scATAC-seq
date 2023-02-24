@@ -1,3 +1,14 @@
+############    -  Dimensionality reduction, clustering and UMAP of scATAC-seq data  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2022-10-26
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Using filtered good quality cells, this script will perform dimensionality reduction using iterative LSI, batch effect correction with Harmony, clustering,
+# and will add UMAP for future visualization
+
 library(ArchR)
 library(stringr)
 library(rjson)
@@ -50,13 +61,15 @@ Project <- addIterativeLSI(
     dimsToUse = dims,
     force=TRUE
 )
+
+## Adds Harmony batch effect in a new dimensional reduction
 Project <- addHarmony(ArchRProj = Project,
 reducedDims = args$IterativeLSI_name,
 name = args$Harmony_name,
 groupBy = args$groupby, 
 force = TRUE)
 
-
+## Performs clustering using al desired resolutions in both, regular LSI dimensional reduction, and Harmony corrected dimensional reduction
 for (res in resolutions){
 
 Project <- addClusters(
@@ -75,7 +88,7 @@ resolution = as.double(res),
 force = TRUE)
 }
 
-
+## Adds UMAP for regular LSI and Harmony
 Project <- addUMAP(
     ArchRProj = Project,
     reducedDims = args$IterativeLSI_name,
