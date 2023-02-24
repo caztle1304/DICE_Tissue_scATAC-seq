@@ -1,3 +1,14 @@
+############    -  Processing of scATAC-seq data  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2022-10-14
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Based on the result(s) of the clustering(s), this program will plot: cells per cluster, proportion of each cluster, proportion of each sample in ArchR project in a given cluster,
+# total proportion of each sample in project, and will create a table with ArchR QCs grouped by sample
+
 library(ArchR)
 library(argparse)
 library(stringr)
@@ -121,6 +132,7 @@ dev.off()
 
 pdf(paste0(args$plotDir, 'clusterStats_Harmony.pdf'))
 
+# If multiple resolutions provided, it will create plots for each one of them
 for (res in resolutions)
 {
   clustering <- paste0(args$Harmony_name, '_', res)
