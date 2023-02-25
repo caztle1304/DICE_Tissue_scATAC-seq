@@ -1,3 +1,5 @@
+######################## Necessary lines to run analyses for Lung CD8 cells ################
+
 Rscript=/mnt/BioApps/R/4.0.1/bin/Rscript
 
 #### LSI, Harmony, Clustering, UMAP
