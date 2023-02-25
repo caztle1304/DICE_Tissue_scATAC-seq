@@ -1,3 +1,14 @@
+############    - BigWig file creation from ArchR project  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2023-02-10
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Based on a given column in an ArchR project, this script will create bigWig files for each group, move them to an output directory and create 
+# necessary subdirectories in the process
+
 library(ArchR)
 library(dplyr)
 library(argparse)
