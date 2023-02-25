@@ -1,3 +1,14 @@
+############    -  Assessment of results of scATAC-seq data integration with scRNA-seq data  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2022-12-09
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Based in the results of integration, this script will plot: a violin plot with prediction scores for each cell type, number and proportion of each cell type, 
+# and a confusion matrix with the desired resolutions of clustering
+
 library(ArchR)
 library(ggrepel)
 library(pheatmap)
