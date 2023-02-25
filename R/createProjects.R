@@ -1,3 +1,13 @@
+############    -  Creation of initial ArchR projects  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2022-11-09
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Using Cell Ranger fragment file, this script will: create initial ArchR projects, filter cells based on QCs and filter doublets in project 
+
 library(ArchR)
 set.seed(1)
 addArchRGenome('hg38')
