@@ -1,3 +1,14 @@
+############    -  Add annotations of subpopulations to ArchR project  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2022-11-14
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Based on the chosen resolution of clustering, this program will add an additional column of data to an ArchR project specifying the subpopulation to which 
+# a cell belongs
+
 library(ArchR)
 library(argparse)
 library(stringr)
