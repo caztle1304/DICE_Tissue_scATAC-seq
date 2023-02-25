@@ -1,3 +1,12 @@
+############    -  Plotting QC metrics  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2022-10-10
+# ---
+
+### -------------------------- Description -------------------------- ###
+#This script will plot TSS enrichment and distribution of fragment size, as well as a TSS vs Fragments plot of an ArchR project
 library(ArchR)
 library(argparse)
 library(stringr)
