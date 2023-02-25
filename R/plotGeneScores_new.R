@@ -1,3 +1,13 @@
+############    -  Gene score calculation and visualization in UMAP  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2022-12-15
+# ---
+
+### -------------------------- Description -------------------------- ###
+# This script will calculate gene scores of an ArchR project, impute them, and will visualize them on regular and Harmony UMAPs using a list of user-provided marker genes.
+
 library(ArchR)
 library(argparse)
 library(stringr)
