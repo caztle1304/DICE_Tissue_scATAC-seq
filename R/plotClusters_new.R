@@ -1,3 +1,14 @@
+############    - Plotting UMAP   -    ############
+
+# ---
+# Authors: Angel Adrian De la Cruz Castillo, Job Rocha
+# Date: 2022-12-16
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Using a UMAP in an ArchR project, this script will plot it colored by different QC metrics: TSS enrichment, number of fragments, sample of origin, reads in promoter, 
+# promoter ratio, reads in TSS; as well as by the found clusters.
+
 library(ArchR)
 library(argparse)
 library(stringr)
