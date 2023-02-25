@@ -1,3 +1,14 @@
+############    -  Peak calling  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2023-02-15
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Using any available column in an ArchR project, this script will: perform peak calling in ArchR using Macs2, write peaks into bed format, sort the resulting
+# bed file, and finally create a bigBed file for UCSC browser visualization for each group in the specified column.
+
 library(ArchR)
 library(stringr)
 library(dplyr)
