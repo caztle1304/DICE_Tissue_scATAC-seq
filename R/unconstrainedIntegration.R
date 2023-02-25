@@ -1,3 +1,14 @@
+############    - scATAC-seq integration with scRNA-seq  -    ############
+
+# ---
+# Author:Angel Adrian De la Cruz Castillo
+# Date: 2022-12-16
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Using an ArchR project and a Seurat object containing scRNA-seq data, this script will perform unconstrained integration and will plot the results 
+# in a UMAP, as well as the prediction score and some plots for QC: violoin plot with prediction score per cell type, number and proportion of each ell type
+
 library(plyr)
 library(ArchR)
 library(Signac)
