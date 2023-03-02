@@ -1,4 +1,12 @@
-# Final Gene score plots
+############    -  Plotting UMAP colored by gene scores  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2022-03-02
+# ---
+
+### -------------------------- Description -------------------------- ###
+# This script plots UMAPs for each cell type with the gene scores used for pupulation definition
 
 library(ArchR)
 
