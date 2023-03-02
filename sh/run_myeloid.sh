@@ -90,7 +90,7 @@ $Rscript $stats --Project $project --resolutions $resolutions --plotDir $plotDir
 #### Add annotation column step ommited since we're using results of integration for rest of analyses
 #### Removing MAST cells cluster
 
-$Rscript /mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/scripts/removeMASTcluster_myeloid_Feb15_2023.R
+$Rscript /mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/scripts/removeMASTcluster_myeloid_Feb28_2023.R
 
 #### Add peaks parent cell type level (pseudobulk is made using all cells)
 addPeaks=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/archR/scripts/addPeaks_byGroup.R
@@ -99,7 +99,7 @@ bedSort=~/bedSort
 chromSizes=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/archR_aggr/peaks/pbs/hg38.chrom.sizes
 groupColName=celltype
 project=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/projects/myeloid_R24DICE_Hu_M2_mye_ATAC_TSS8_nFragslog3.5_varFeats30k_noMAST
-outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/peaks_Feb15_2023/myeloid_noMAST/
+outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/peaks_Feb28_2023/myeloid_noMAST/
 
 $Rscript $addPeaks --Project $project --groupColName $groupColName --outDir $outPeakDir --chromSizes $chromSizes --bedSort $bedSort --bedToBigBed $bedToBigBed
 
@@ -108,16 +108,16 @@ addPeaks=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/archR/scripts/addPeaks_byG
 bedToBigBed=~/bedToBigBed
 bedSort=~/bedSort
 chromSizes=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/archR_aggr/peaks/pbs/hg38.chrom.sizes
-
 project=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/projects/myeloid_R24DICE_Hu_M2_mye_ATAC_TSS8_nFragslog3.5_varFeats30k_noMAST
 groupColName=predictedGroup_Un
-outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/peaks_byCelltype/02_13_23/myeloid/
+outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/peaks_byCelltype/02_28_23/myeloid/
+
 $Rscript $addPeaks --Project $project --groupColName $groupColName --outDir $outPeakDir --chromSizes $chromSizes --bedSort $bedSort --bedToBigBed $bedToBigBed
 
 #### Make bigWig files parent cell type level (pseudobulk is made using all cells) and subpopulation level (one pseudobulk per each subpopulation)
 script=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/archR/scripts/getGroupBw.R
 Project=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/projects/myeloid_R24DICE_Hu_M2_mye_ATAC_TSS8_nFragslog3.5_varFeats30k_noMAST
-outDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/UCSC_tracks_archR/bigwigs_Feb13_2023/myeloid
+outDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/UCSC_tracks_archR/bigwigs_Feb28_2023/myeloid
 groupBy=celltype,predictedGroup_Un
 tileSize=10
 normMethod=ReadsInTSS,ReadsInPromoter,nFrags,nCells
