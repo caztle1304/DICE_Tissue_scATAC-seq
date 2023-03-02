@@ -1,3 +1,13 @@
+############    -  Creation of initial ArchR projects without any filter   -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2023-02-02
+# ---
+
+### -------------------------- Description -------------------------- ###
+# Using Cell Ranger fragment file, this script will create ArchR proejcts without using any filter for QC purposes 
+
 library(ArchR)
 set.seed(1)
 addArchRGenome('hg38')
