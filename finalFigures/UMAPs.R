@@ -1,4 +1,13 @@
-### Plot final UMAPs with new colors and modified titles
+############    -  UMAP plotting  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2023-03-02
+# ---
+
+### -------------------------- Description -------------------------- ###
+# This script was used to plot UMAPs colored by different groups: unbiased clustering, results of integration with scRNA-seq and prediction 
+# scores of integration with scRNA-seq
 
 library(ArchR)
 library(stringr)
