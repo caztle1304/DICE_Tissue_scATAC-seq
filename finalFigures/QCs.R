@@ -1,4 +1,14 @@
-# Plot QCs
+############    -  Plotting final QC metrics  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2023-03-02
+# ---
+
+### -------------------------- Description -------------------------- ###
+# This script creates all final QC metrics used in paper: TSS vs Fragments plot, fragment size distribution, TSS enrichment and a comined 
+# violin/boxplot containing prediction scores for each cell type resulting from scRNA-seq integration
+
 
 library(ArchR)
 
