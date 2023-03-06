@@ -30,6 +30,7 @@ To download UCSC utilities go to: https://hgdownload.cse.ucsc.edu/admin/exe/linu
 --------------
 - Pre-processing was done entirely using Cell Ranger ATAC mkffastq and count (v2.0.0)
 - sh files contain lines and parameters that were used to call R scripts to process fragment files and visualize results. First run_createProjects.sh was used for creation of all initial ArchR projects and then, the rest of sh files were used for each cell-type-specific ArchR project. 
+- Scripts used to create figures in paper are located in finalFigures folder
 
 ## Contact 
 --------------
