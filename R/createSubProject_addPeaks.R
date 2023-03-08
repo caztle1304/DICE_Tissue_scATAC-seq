@@ -1,3 +1,14 @@
+############    -  Peak calling sub population level  -    ############
+
+# ---
+# Author: Angel Adrian De la Cruz Castillo
+# Date: 2023-07-03
+# ---
+
+### -------------------------- Description -------------------------- ###
+# From a given column in an ArchR project, this scripts create a subsetted project for each group in that column and calls peaks to 
+# avoid iterative overlap approach implemented by ArchR
+
 library(ArchR)
 library(argparse)
 library(stringr)
