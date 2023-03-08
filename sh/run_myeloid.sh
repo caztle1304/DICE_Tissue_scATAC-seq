@@ -104,15 +104,17 @@ outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/pe
 $Rscript $addPeaks --Project $project --groupColName $groupColName --outDir $outPeakDir --chromSizes $chromSizes --bedSort $bedSort --bedToBigBed $bedToBigBed
 
 #### Add peaks subpopulation level (one pseudobulk per each subpopulation)
-addPeaks=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/archR/scripts/addPeaks_byGroup.R
+script=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/archR/scripts/createSubProject_addPeaks.R
 bedToBigBed=~/bedToBigBed
 bedSort=~/bedSort
 chromSizes=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/archR_aggr/peaks/pbs/hg38.chrom.sizes
 project=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/projects/myeloid_R24DICE_Hu_M2_mye_ATAC_TSS8_nFragslog3.5_varFeats30k_noMAST
-groupColName=predictedGroup_Un
-outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/peaks_byCelltype/02_28_23/myeloid/
+outProjectDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/projects_bySubpopulation/03_03_2023/myeloid/
+outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/peaks_Mar3_2023/myeloid/
+groupBy=predictedGroup_Un
+minCells=10 ## Lowered to 10 instead of 25 because of the low number of cells in cDC2s (22 cells)
 
-$Rscript $addPeaks --Project $project --groupColName $groupColName --outDir $outPeakDir --chromSizes $chromSizes --bedSort $bedSort --bedToBigBed $bedToBigBed
+$Rscript $script --Project $project --outProjectDir $outProjectDir --outPeakDir $outPeakDir --groupBy $groupBy --bedSort $bedSort --bedToBigBed $bedToBigBed --chromSizes $chromSizes --minCells $minCells
 
 #### Make bigWig files parent cell type level (pseudobulk is made using all cells) and subpopulation level (one pseudobulk per each subpopulation)
 script=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/archR/scripts/getGroupBw.R
