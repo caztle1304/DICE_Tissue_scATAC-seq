@@ -111,14 +111,16 @@ outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/pe
 $Rscript $addPeaks --Project $project --groupColName $groupColName --outDir $outPeakDir --chromSizes $chromSizes --bedSort $bedSort --bedToBigBed $bedToBigBed
 
 #### Add peaks subpopulation level (one pseudobulk per each suupopulation)
-addPeaks=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/archR/scripts/addPeaks_byGroup.R
+script=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/archR/scripts/createSubProject_addPeaks.R
 bedToBigBed=~/bedToBigBed
 bedSort=~/bedSort
 chromSizes=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/archR_aggr/peaks/pbs/hg38.chrom.sizes
 project=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/projects/lungCD8_R24_P_Hu_3_CD8_4D_ATAC_TSS10_nFragslog3.5_varFeats30k
-outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/peaks_byCelltype/12_23_22/lungCD8/
-groupColName=annotations_12_23_22
-$Rscript $addPeaks --Project $project --groupColName $groupColName --outDir $outPeakDir --chromSizes $chromSizes --bedSort $bedSort --bedToBigBed $bedToBigBed
+outProjectDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/projects_bySubpopulation/03_03_2023/lungCD8/
+outPeakDir=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/R24/singleLane_4paper/peaks_Mar3_2023/lungCD8/
+groupBy=annotations_12_23_22
+
+$Rscript $script --Project $project --outProjectDir $outProjectDir --outPeakDir $outPeakDir --groupBy $groupBy --bedSort $bedSort --bedToBigBed $bedToBigBed --chromSizes $chromSizes
 
 #### Make bigWig files parent cell type level (pseudobulk is made using all cells) and subpopulation level (one pseudobulk per each subpopulation)
 script=/mnt/bioadhoc-temp/Groups/vd-vijay/acastillo/archR/scripts/getGroupBw.R
